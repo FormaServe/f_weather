@@ -4,7 +4,7 @@ const router = express.Router()
 const superagent = require('superagent')
 const debug = require('debug')('weather:index')
 
-const apiKey = 
+const APIKEY = process.env.APIKEY
 let title = 'FormaServe - f_Weather'
 
 let weatherText = ''
