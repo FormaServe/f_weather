@@ -37,7 +37,7 @@ server.on('listening', onListening);
 
 // Send started message to logs
 
-console.log(chalk.yellow('*** Starting Weather App ***'))
+console.log(chalk.yellow('*** Starting Weather App on IBMi ***'))
 console.log(chalk.yellow(`Host: ${host}`))
 console.log(chalk.yellow(`Running on Port: ${port}`))
 

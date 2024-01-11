@@ -3,8 +3,8 @@ const express = require('express')
 const router = express.Router()
 const superagent = require('superagent')
 const debug = require('debug')('weather:index')
-
 const APIKEY = process.env.APIKEY
+
 let title = 'FormaServe - f_Weather'
 
 let weatherText = ''
@@ -31,7 +31,7 @@ router.post('/', function(req, res) {
     .post(url)
     .set('accept', 'json')
     .query({ q: city })
-    .query({ appid: apiKey })
+    .query({ appid: APIKEY })
     .query({ units: 'metric' })
     .end((err, result) => {
       if (err) {
@@ -41,18 +41,17 @@ router.post('/', function(req, res) {
           error: 'Error, please try again'
         })
       } else {
-        debug(result.body)
+        debug(`Weather body: {result.body}`)
         if (result.body.main == undefined) {
           result.render('index', {
             weather: null,
             error: 'Error, please try again'
           })
         } else {
-          debug(result.body.main.temp)
+          debug(`Temp is: {result.body.main.temp}`)
           let weatherText = `Weather is ${result.body.weather[0].main},
             (${result.body.weather[0].description})
-            -
-            ${result.body.main.temp} degrees in ${result.body.name}!`
+            ${result.body.main.temp} degrees C in ${result.body.name}!`
 
           res.render('index', {
             title,
