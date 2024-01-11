@@ -33,6 +33,23 @@ Install dependancies
 npm install
 ```
 
+## Additional Setup
+
+Save yourself time by placing your API key in a .env file in the root of this application.
+
+Additionally, if you wish to change the PORT number this application runs on, this also can be placed in the .env file.
+An example .env file is shown below.
+
+```
+APIKEY=58fe301faedc550510e8b2dd6222449x
+PORT=4000
+DEBUG=weather
+HOSTNAME=GALATEA
+```
+
+The .env file should **NOT** be included within source control and should be added to your .gitignore file.
+
+
 Start application
 
 ```
@@ -56,10 +73,6 @@ Point your browser to https://your-IBMi:4000
 
 > Andy Youens - FormaServe Systems Ltd - Twitter [@AndyYouens](https://twitter.com/AndyYouens)
 
-# Latest Changes
-
-> Andy Youens - August 2020
-
 # Published PowerWire Article
 
 > September 2020
@@ -71,3 +84,5 @@ Point your browser to https://your-IBMi:4000
 ### Open Source on IBM i - Oh Yea!
 
 :wink:
+
+
